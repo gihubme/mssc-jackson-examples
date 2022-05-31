@@ -10,8 +10,6 @@ import org.springframework.test.context.ActiveProfiles;
 @JsonTest
 @ActiveProfiles("kebab")
 public class BeerDtoKebabCase extends BaseTest{
-    @Autowired
-    ObjectMapper objectMapper;
 
     @Test
     void testKebab() throws JsonProcessingException {
