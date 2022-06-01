@@ -20,11 +20,11 @@ class BeerDtoTest extends BaseTest {
     @Test
     void testDeserializeDto() throws IOException {
         String json =
-                "{\"beerId\":\"bc7c07bb-a4fe-4abf-bc90-b3b25d1f2206\",\"beerName\":\"BeerName\",\"beerStyle\":\"Ale\",\"upc\":12344586,\"price\":12.99,\"createdDate\":\"2022-05-31T20:03:30.066722+02:00\",\"lastUpdatedDate\":\"2022-05-31T20:03:30.068245+02:00\"}";
+                "{\"beerName\":\"BeerName\",\"beerStyle\":\"Ale\",\"upc\":12344586,\"price\":\"12.99\",\"createdDate\":\"2022-06-01T17:+0200\",\"lastUpdatedDate\":\"2022-06-01T17:42:22.142708+02:00\",\"myLocalDate\":\"20220601\",\"beerId\":\"14ab81a7-f7f3-4db4-befd-b365d4480615\"}";
         BeerDto dto = objectMapper.readValue(json, BeerDto.class);
 
-//        with jsonFormatted dto:
-//        {"beerName":"BeerName","beerStyle":"Ale","upc":12344586,"price":"12.99","createdDate":"2022-06-01T17:+0200","lastUpdatedDate":"2022-06-01T17:31:25.391265+02:00","beerId":"cd655525-b5f0-4252-a367-c5a01d0297f3"}
+//        with jsonFormatted and deserialiser dto:
+//        BeerDto(id=14ab81a7-f7f3-4db4-befd-b365d4480615, beerName=BeerName, beerStyle=Ale, upc=12344586, price=12.99, createdDate=2022-06-01T15:00Z, lastUpdatedDate=2022-06-01T15:42:22.142708Z, myLocalDate=2022-06-01)
         System.out.println(dto);
     }
 }
